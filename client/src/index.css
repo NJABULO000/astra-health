@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@theme {
+  --color-space: #07111F;
+  --color-navy: #0B1728;
+  --color-panel: #112238;
+  --color-primary: #38BDF8;
+  --color-cyan: #22D3EE;
+  --color-ok: #22C55E;
+  --color-warn: #F59E0B;
+  --color-danger: #EF4444;
+  --color-ink: #F8FAFC;
+}
+
+body {
+  background-color: var(--color-space);
+  color: var(--color-ink);
+}

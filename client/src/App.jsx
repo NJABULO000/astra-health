@@ -1,8 +1,24 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./components/Layout";
+import PlaceholderPage from "./pages/PlaceholderPage";
+import { modules } from "./data/modules";
+
 function App() {
   return (
-    <div className="min-h-screen bg-[#07111F] flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-[#38BDF8]">ASTRA HEALTH</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Navigate to="/dashboard" replace />} />
+          {modules.map((m) => (
+            <Route
+              key={m.path}
+              path={m.path}
+              element={<PlaceholderPage title={m.label} />}
+            />
+          ))}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
